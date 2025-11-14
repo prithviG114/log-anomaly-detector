@@ -1,0 +1,27 @@
+# Production-ready Dockerfile for ML Analyzer service
+# Uses Python 3.11 slim image for smaller footprint
+FROM python:3.11-slim
+
+WORKDIR /app
+
+# Copy only necessary files for ML analyzer
+COPY ml-service/ml_analyzer.py .
+COPY requirements.txt .
+
+# Install Python dependencies
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Create models directory for persisted models
+RUN mkdir -p models
+
+# Expose the service port
+EXPOSE 5001
+
+# Use gunicorn for production WSGI server
+# -w 4: 4 worker processes for handling concurrent requests
+# -b 0.0.0.0:5001: bind to all interfaces on port 5001
+# ml_analyzer:app: Flask app instance
+CMD ["gunicorn", "-w", "4", "-b", "0.0.0.0:5001", "ml_analyzer:app"]
+
+
+

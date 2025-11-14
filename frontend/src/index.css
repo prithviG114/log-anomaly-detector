@@ -1,0 +1,68 @@
+:root {
+  --bg-1: #0d0a0b;
+  --bg-2: #1b1a20;
+  --glass-1: rgba(255,255,255,0.07);
+  --glass-2: rgba(255,255,255,0.03);
+  --accent-amber: #ffb86b;
+  --accent-rose: #ff7c93;
+  --accent-bluegray: #8ea7c0;
+  --muted: rgba(255,255,255,0.65);
+  --radius: 18px;
+  --blur: 18px;
+  --card-padding: 28px;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background: radial-gradient(1000px 700px at 15% 20%, rgba(255,184,107,0.05), transparent 20%),
+              radial-gradient(900px 600px at 85% 80%, rgba(255,124,147,0.05), transparent 20%),
+              linear-gradient(180deg,var(--bg-1),var(--bg-2));
+  background-attachment: fixed;
+  background-size: cover;
+  color: #f8f8f8;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255,255,255,0.02);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.1);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255,255,255,0.15);
+}
+
+
+
+
