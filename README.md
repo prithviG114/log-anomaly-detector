@@ -1,4 +1,5 @@
-# Log Anomaly Detector
+# LogSentry
+
 
 AI-powered log anomaly detection system for microservices using machine learning and real-time visualization.
 
